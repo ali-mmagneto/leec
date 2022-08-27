@@ -12,7 +12,7 @@ from pyrogram import Client, filters, idle
 from pyrogram.raw import functions, types
 from pyrogram.handlers import CallbackQueryHandler, MessageHandler
 
-from tobrot import app
+from tobrot import app, userbot
 from tobrot import (
     AUTH_CHANNEL,
     CANCEL_COMMAND_G,
@@ -73,6 +73,8 @@ if __name__ == "__main__":
         os.makedirs(DOWNLOAD_LOCATION)
     # Starting The Bot
     app.start()
+    #starting the userbot
+    userbot.start()
     ##############################################################################
     incoming_message_handler = MessageHandler(
         incoming_message_f,
