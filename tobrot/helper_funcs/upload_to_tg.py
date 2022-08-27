@@ -24,6 +24,7 @@ from pyrogram.types import InputMediaAudio, InputMediaDocument, InputMediaVideo
 from requests.utils import requote_uri
 from tobrot import (
     DESTINATION_FOLDER,
+    PRE_LOG,
     DOWNLOAD_LOCATION,
     EDIT_SLEEP_TIME_OUT,
     INDEX_LINK,
@@ -33,6 +34,7 @@ from tobrot import (
     UPLOAD_AS_DOC,
     gDict,
     user_specific_config,
+    userbot
 )
 from tobrot.helper_funcs.copy_similar_file import copy_file
 from tobrot.helper_funcs.display_progress import humanbytes, Progress
@@ -329,7 +331,8 @@ async def upload_single_file(
                 "**Status :** `Starting Uploading 📤`\n\n**• FileName :** `{}`".format(os.path.basename(local_file_name))
             )
             prog = Progress(from_user, client, message_for_progress_display)
-        sent_message = await message.reply_document(
+        sent_message = await userbot.send_document(
+            chat_id=PRE_LOG,
             document=local_file_name,
             thumb=thumb,
             caption=caption_str,
@@ -415,7 +418,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send video
-                if edit_media and message.photo:
+                if 4_GB == 'NO':
                     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
                     sent_message = await message.edit_media(
                         media=InputMediaVideo(
@@ -431,7 +434,8 @@ async def upload_single_file(
                         # quote=True,
                     )
                 else:
-                    sent_message = await message.reply_video(
+                    sent_message = await userbot.send_video(
+                        chat_id=PRE_LOG,
                         video=local_file_name,
                         caption=caption_str,
                         parse_mode="html",
@@ -470,7 +474,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send audio
-                if edit_media and message.photo:
+                if 4_GB == 'NO':
                     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
                     sent_message = await message.edit_media(
                         media=InputMediaAudio(
@@ -484,7 +488,7 @@ async def upload_single_file(
                         )
                     )
                 else:
-                    sent_message = await message.reply_audio(
+                    sent_message = await userbot.send_audio(
                         audio=local_file_name,
                         caption=caption_str,
                         parse_mode="html",
@@ -515,7 +519,7 @@ async def upload_single_file(
                     thumb = thumb_image_path
                 #
                 # send document
-                if edit_media and message.photo:
+                if 4_GB == 'NO':
                     sent_message = await message.edit_media(
                         media=InputMediaDocument(
                             media=local_file_name,
@@ -525,7 +529,8 @@ async def upload_single_file(
                         )
                     )
                 else:
-                    sent_message = await message.reply_document(
+                    sent_message = await userbot.send_document(
+                        chat_id=PRE_LOG,
                         document=local_file_name,
                         thumb=thumb,
                         caption=caption_str,
