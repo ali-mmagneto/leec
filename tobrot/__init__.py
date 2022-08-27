@@ -52,6 +52,7 @@ for imp in ["TG_BOT_TOKEN", "APP_ID", "API_HASH", "OWNER_ID", "AUTH_CHANNEL"]:
 
 # The Telegram API things
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+STRING_SESSION = os.environ.get("STRING_SESSION", "")
 APP_ID = int(os.environ.get("APP_ID", "12345"))
 API_HASH = os.environ.get("API_HASH")
 OWNER_ID = int(os.environ.get("OWNER_ID", "539295917"))
@@ -158,3 +159,4 @@ multi_rclone_init()
 
 app = Client("LeechBot", bot_token=TG_BOT_TOKEN, api_id=APP_ID, api_hash=API_HASH, workers=343)
 
+userbot = Client("userbot", session_string=STRING_SESSION, api_id=APP_ID, api_hash=API_HASH, workers=343)
