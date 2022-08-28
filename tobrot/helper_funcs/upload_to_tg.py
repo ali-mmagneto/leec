@@ -420,22 +420,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send video
-                if 4_GB == 'NO':
-                    await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-                    sent_message = await message.edit_media(
-                        media=InputMediaVideo(
-                            media=local_file_name,
-                            thumb=thumb,
-                            caption=caption_str,
-                            parse_mode="html",
-                            width=width,
-                            height=height,
-                            duration=duration,
-                            supports_streaming=True,
-                        )
-                        # quote=True,
-                    )
-                else:
+                if PRE:
                     sent_message = await userbot.send_video(
                         chat_id=PRE_LOG,
                         video=local_file_name,
@@ -482,20 +467,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send audio
-                if 4_GB == 'NO':
-                    await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-                    sent_message = await message.edit_media(
-                        media=InputMediaAudio(
-                            media=local_file_name,
-                            thumb=thumb,
-                            caption=caption_str,
-                            parse_mode="html",
-                            duration=duration,
-                            performer=artist,
-                            title=title,
-                        )
-                    )
-                else:
+                if PRE:
                     sent_message = await userbot.send_audio(
                         audio=local_file_name,
                         caption=caption_str,
@@ -533,16 +505,7 @@ async def upload_single_file(
                     thumb = thumb_image_path
                 #
                 # send document
-                if 4_GB == 'NO':
-                    sent_message = await message.edit_media(
-                        media=InputMediaDocument(
-                            media=local_file_name,
-                            thumb=thumb,
-                            caption=caption_str,
-                            parse_mode="html",
-                        )
-                    )
-                else:
+                if PRE:
                     sent_message = await userbot.send_document(
                         chat_id=PRE_LOG,
                         document=local_file_name,
