@@ -23,6 +23,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.types import InputMediaAudio, InputMediaDocument, InputMediaVideo
 from requests.utils import requote_uri
 from tobrot import (
+    BOT_PM,
     DESTINATION_FOLDER,
     PRE_LOG,
     DOWNLOAD_LOCATION,
@@ -451,8 +452,14 @@ async def upload_single_file(
                             start_time,
                         ),
                     )
-                if thumb is not None:
-                    os.remove(thumb)
+                if BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=PRE_LOG, 
+                            message_id=sent_message.id)
+                    except Exception as f:
+                        bot.send_message(OWNER_ID, "{f}")
             elif local_file_name.upper().endswith(("MP3", "M4A", "M4B", "FLAC", "WAV")):
                 metadata = extractMetadata(createParser(local_file_name))
                 duration = 0
@@ -503,8 +510,14 @@ async def upload_single_file(
                             start_time,
                         ),
                     )
-                if thumb is not None:
-                    os.remove(thumb)
+                if BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=PRE_LOG, 
+                            message_id=sent_message.id)
+                    except Exception as f:
+                        bot.send_message(OWNER_ID, "{f}")
             else:
                 thumb_image_path = None
                 if os.path.isfile(thumbnail_location):
@@ -542,9 +555,14 @@ async def upload_single_file(
                             start_time,
                         ),
                     )
-                if thumb is not None:
-                    os.remove(thumb)
-
+                if BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=PRE_LOG, 
+                            message_id=sent_message.id)
+                    except Exception as f:
+                        bot.send_message(OWNER_ID, "{f}")
         except MessageNotModified as oY:
             LOGGER.info(oY)
         except FloodWait as g:
