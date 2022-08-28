@@ -23,6 +23,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.types import InputMediaAudio, InputMediaDocument, InputMediaVideo
 from requests.utils import requote_uri
 from tobrot import (
+    4_GB,
     BOT_PM,
     DESTINATION_FOLDER,
     PRE_LOG,
