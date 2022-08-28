@@ -441,7 +441,7 @@ async def upload_single_file(
                     )
                 if BOT_PM:
                     try:
-                        await bot.copy_message(
+                        await app.copy_message(
                             chat_id=chat_id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
@@ -487,7 +487,7 @@ async def upload_single_file(
                     )
                 if BOT_PM:
                     try:
-                        await bot.copy_message(
+                        await app.copy_message(
                             chat_id=chat_id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
@@ -523,7 +523,7 @@ async def upload_single_file(
                     )
                 if BOT_PM:
                     try:
-                        await bot.copy_message(
+                        await app.copy_message(
                             chat_id=chat_id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
