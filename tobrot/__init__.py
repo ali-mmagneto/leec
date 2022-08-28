@@ -52,6 +52,7 @@ for imp in ["TG_BOT_TOKEN", "APP_ID", "API_HASH", "OWNER_ID", "AUTH_CHANNEL"]:
 
 # The Telegram API things
 PRE = "True"
+BOT_PM = "True"
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 APP_ID = int(os.environ.get("APP_ID", "12345"))
