@@ -51,13 +51,13 @@ for imp in ["TG_BOT_TOKEN", "APP_ID", "API_HASH", "OWNER_ID", "AUTH_CHANNEL"]:
         exit()
 
 # The Telegram API things
-4_GB = "True"
+PRE = "True"
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 APP_ID = int(os.environ.get("APP_ID", "12345"))
 API_HASH = os.environ.get("API_HASH")
 OWNER_ID = int(os.environ.get("OWNER_ID", "539295917"))
-
+PRE_LOG = os.environ.get("PRE_LOG")
 # Get these values from my.telegram.org
 # to store the channel ID who are authorized to use the bot
 AUTH_CHANNEL = [int(x) for x in os.environ.get("AUTH_CHANNEL", "539295917").split()]
