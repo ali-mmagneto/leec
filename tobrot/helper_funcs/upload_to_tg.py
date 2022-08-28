@@ -420,6 +420,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send video
+                prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
                     sent_message = await userbot.send_video(
                         chat_id=PRE_LOG,
@@ -467,6 +468,7 @@ async def upload_single_file(
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
                 # send audio
+                prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
                     sent_message = await userbot.send_audio(
                         audio=local_file_name,
