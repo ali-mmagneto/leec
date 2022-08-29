@@ -443,7 +443,7 @@ async def upload_single_file(
                 if BOT_PM:
                     try:
                         await client.copy_message(
-                            chat_id=message.chat_id, 
+                            chat_id=message.chat.id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
                     except Exception as f:
@@ -489,7 +489,7 @@ async def upload_single_file(
                 if BOT_PM:
                     try:
                         await client.copy_message(
-                            chat_id=message.chat_id, 
+                            chat_id=message.chat.id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
                     except Exception as f:
@@ -525,7 +525,7 @@ async def upload_single_file(
                 if BOT_PM:
                     try:
                         await client.copy_message(
-                            chat_id=message.chat_id, 
+                            chat_id=message.chat.id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
                     except Exception as f:
