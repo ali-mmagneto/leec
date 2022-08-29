@@ -180,7 +180,7 @@ if __name__ == "__main__":
     ##############################################################################
     upload_log_handler = MessageHandler(
         upload_log_file,
-        filters=filters.command([f"{LOG_COMMAND}"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command([f"{LOG_COMMAND}"]),
     )
     app.add_handler(upload_log_handler)
     ##############################################################################
