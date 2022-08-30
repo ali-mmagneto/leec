@@ -420,6 +420,7 @@ async def upload_single_file(
                 thumb = None
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
+                chat_id = int(message.chat.id)
                 # send video
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
@@ -443,7 +444,7 @@ async def upload_single_file(
                 if BOT_PM:
                     try:
                         await client.copy_message(
-                            chat_id=chat.id, 
+                            chat_id=message.chat.id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
                     except Exception as f:
@@ -468,10 +469,12 @@ async def upload_single_file(
                 thumb = None
                 if thumb_image_path is not None and os.path.isfile(thumb_image_path):
                     thumb = thumb_image_path
+                chat_id = int(message.chat.id)
                 # send audio
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
                     sent_message = await userbot.send_audio(
+                        chat_id=PRE_LOG,
                         audio=local_file_name,
                         caption=caption_str,
                         parse_mode="html",
@@ -489,7 +492,7 @@ async def upload_single_file(
                 if BOT_PM:
                     try:
                         await client.copy_message(
-                            chat_id=chat.id, 
+                            chat_id=chat_id, 
                             from_chat_id=PRE_LOG, 
                             message_id=sent_message.id)
                     except Exception as f:
