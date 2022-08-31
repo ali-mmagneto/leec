@@ -18,6 +18,7 @@ from tobrot import (
     CANCEL_COMMAND_G,
     CLEAR_THUMBNAIL,
     CLONE_COMMAND_G,
+    PRE_LOG,
     DOWNLOAD_LOCATION,
     GET_SIZE_G,
     GLEECH_COMMAND,
@@ -241,7 +242,8 @@ if __name__ == "__main__":
     ##############################################################################
     
     logging.info(f"@{(app.get_me()).username} Has Started Running...🏃💨💨 Now gimme 100$ 🐸")
-    
+    app.send_message(PRE_LOG, "Ben Çalışmaya Başladım.")
+
     idle()
     
     app.stop()
