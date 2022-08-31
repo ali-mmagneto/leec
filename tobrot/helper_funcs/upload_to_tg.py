@@ -423,7 +423,7 @@ async def upload_single_file(
                 # send video
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
-                    sent_message = await userbot.send_video(
+                    copy = await userbot.send_video(
                         chat_id=PRE_LOG,
                         video=local_file_name,
                         caption=caption_str,
@@ -445,7 +445,7 @@ async def upload_single_file(
                         await app.copy_message(
                             chat_id=PRE_LOG, 
                             from_chat_id=PRE_LOG, 
-                            message_id=sent_message.id)
+                            message_id=copy.id)
                     except Exception as f:
                         LOGGER.info(f)
                         await message_for_progress_display.edit_text("Yükleme Başarılı")
@@ -472,7 +472,7 @@ async def upload_single_file(
                 # send audio
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
-                    sent_message = await userbot.send_audio(
+                    copy = await userbot.send_audio(
                         chat_id=PRE_LOG,
                         audio=local_file_name,
                         caption=caption_str,
@@ -493,7 +493,7 @@ async def upload_single_file(
                         await app.copy_message(
                             chat_id=PRE_LOG, 
                             from_chat_id=PRE_LOG, 
-                            message_id=sent_message.id)
+                            message_id=copy.id)
                     except Exception as f:
                         LOGGER.info(f)
                         await message_for_progress_display.edit_text("Yükleme Başarılı")
@@ -512,7 +512,7 @@ async def upload_single_file(
                 #
                 # send document
                 if PRE:
-                    sent_message = await userbot.send_document(
+                    copy = await userbot.send_document(
                         chat_id=PRE_LOG,
                         document=local_file_name,
                         thumb=thumb,
@@ -530,7 +530,7 @@ async def upload_single_file(
                         await app.copy_message(
                             chat_id=PRE_LOG, 
                             from_chat_id=PRE_LOG, 
-                            message_id=sent_message.id)
+                            message_id=copy.id)
                     except Exception as f:
                         LOGGER.info(f)
                         await message_for_progress_display.edit_text("Yükleme Başarılı")
