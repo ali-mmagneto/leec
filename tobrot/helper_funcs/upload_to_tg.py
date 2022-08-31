@@ -302,13 +302,13 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
 
 
 async def upload_single_file(
-    message, local_file_name, caption_str, from_user, client, edit_media, yt_thumb
+    bot, update, local_file_name, caption_str, from_user, client, edit_media, yt_thumb
 ):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
     local_file_name = str(Path(local_file_name).resolve())
     sent_message = None
     start_time = time.time() 
-    message = message.message
+    message = update.message
     chat_id = message.chat.id
     #
     thumbnail_location = os.path.join(
