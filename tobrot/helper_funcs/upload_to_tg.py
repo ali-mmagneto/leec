@@ -449,6 +449,7 @@ async def upload_single_file(
                             message_id=sent_message.id)
                     except Exception as f:
                         LOGGER.info(f)
+                        await message_for_progress_display.edit_text("Yükleme Başarılı")
             elif local_file_name.upper().endswith(("MP3", "M4A", "M4B", "FLAC", "WAV")):
                 metadata = extractMetadata(createParser(local_file_name))
                 duration = 0
@@ -497,6 +498,7 @@ async def upload_single_file(
                             message_id=sent_message.id)
                     except Exception as f:
                         LOGGER.info(f)
+                        await message_for_progress_display.edit_text("Yükleme Başarılı")
             else:
                 thumb_image_path = None
                 if os.path.isfile(thumbnail_location):
@@ -533,6 +535,7 @@ async def upload_single_file(
                             message_id=sent_message.id)
                     except Exception as f:
                         LOGGER.info(f)
+                        await message_for_progress_display.edit_text("Yükleme Başarılı")
         except MessageNotModified as oY:
             LOGGER.info(oY)
         except FloodWait as g:
