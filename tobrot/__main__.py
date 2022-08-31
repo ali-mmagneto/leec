@@ -68,7 +68,6 @@ from tobrot.plugins.status_message_fn import (
     upload_as_video
 )
 
-pre_log = "-1001531553189"
 
 if __name__ == "__main__":
     # create download directory, if not exist
@@ -244,7 +243,6 @@ if __name__ == "__main__":
     ##############################################################################
     
     logging.info(f"@{(app.get_me()).username} Has Started Running...🏃💨💨 Now gimme 100$ 🐸")
-    app.send_message(pre_log, "Ben Çalışmaya Başladım.")
 
     idle()
     
