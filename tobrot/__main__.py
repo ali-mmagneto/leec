@@ -243,7 +243,8 @@ if __name__ == "__main__":
     ##############################################################################
     
     logging.info(f"@{(app.get_me()).username} Has Started Running...🏃💨💨 Now gimme 100$ 🐸")
-
+    logging.info(f"@{(userbot.get_me()).username} UserBot başlatıldı...🏃💨💨")
+    
     idle()
     
     app.stop()
