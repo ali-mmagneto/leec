@@ -161,4 +161,4 @@ multi_rclone_init()
 
 app = Client("LeechBot", bot_token=TG_BOT_TOKEN, api_id=APP_ID, api_hash=API_HASH, workers=343)
 
-userbot = Client(session_name=STRING_SESSION, api_id=APP_ID, api_hash=API_HASH)
+userbot = Client("UserBot", session_string=STRING_SESSION, api_id=APP_ID, api_hash=API_HASH)
