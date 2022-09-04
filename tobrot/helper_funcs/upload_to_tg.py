@@ -11,6 +11,7 @@ import subprocess
 import time
 from functools import partial
 from pathlib import Path
+from pyrogram import enums
 
 import pyrogram.types as pyrogram
 import requests
