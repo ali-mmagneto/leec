@@ -7,6 +7,7 @@ import math
 import os
 import time
 
+from pyrogram import enums
 from pyrogram.errors.exceptions import FloodWait
 from tobrot import (
     EDIT_SLEEP_TIME_OUT,
