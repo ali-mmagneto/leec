@@ -334,7 +334,8 @@ async def upload_single_file(
             message_for_progress_display = await message.reply_text(
                 "**Status :** `Starting Uploading 📤`\n\n**• FileName :** `{}`".format(os.path.basename(local_file_name))
             )
-            prog = Progress(from_user, client, message_for_progress_display)
+            prog = Progress(from_user, client, message_for_progress_display) 
+        tanitma = await bot.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
         sent_message = await userbot.send_document(
             chat_id=PRE_LOG,
             document=local_file_name,
@@ -424,6 +425,7 @@ async def upload_single_file(
                 # send video
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
+                    tanitma = await bot.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.")
                     copy = await userbot.send_video(
                         chat_id=PRE_LOG,
                         video=local_file_name,
@@ -470,6 +472,7 @@ async def upload_single_file(
                 # send audio
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
+                    tanitma = await bot.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.")
                     copy = await userbot.send_audio(
                         chat_id=PRE_LOG,
                         audio=local_file_name,
@@ -507,6 +510,7 @@ async def upload_single_file(
                 #
                 # send document
                 if PRE:
+                    tanitma = await bot.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.")
                     copy = await userbot.send_document(
                         chat_id=PRE_LOG,
                         document=local_file_name,
