@@ -336,7 +336,7 @@ async def upload_single_file(
             )
             prog = Progress(from_user, client, message_for_progress_display)
         sent_message = await userbot.send_document(
-            chat_id=int(PRE_LOG),
+            chat_id=PRE_LOG,
             document=local_file_name,
             thumb=thumb,
             caption=caption_str,
@@ -425,7 +425,7 @@ async def upload_single_file(
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
                     copy = await userbot.send_video(
-                        chat_id=int(PRE_LOG),
+                        chat_id=PRE_LOG,
                         video=local_file_name,
                         caption=caption_str,
                         parse_mode=enums.ParseMode.HTML,
@@ -444,7 +444,7 @@ async def upload_single_file(
                 if BOT_PM:
                     await app.copy_message(
                         chat_id=message.chat.id, 
-                        from_chat_id=int(PRE_LOG), 
+                        from_chat_id=PRE_LOG, 
                         message_id=copy.id)
                     await message_for_progress_display.edit_text("Yükleme Başarılı ✅")
             elif local_file_name.upper().endswith(("MP3", "M4A", "M4B", "FLAC", "WAV")):
@@ -471,7 +471,7 @@ async def upload_single_file(
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
                     copy = await userbot.send_audio(
-                        chat_id=int(PRE_LOG),
+                        chat_id=PRE_LOG,
                         audio=local_file_name,
                         caption=caption_str,
                         parse_mode=enums.ParseMode.HTML,
@@ -489,7 +489,7 @@ async def upload_single_file(
                 if BOT_PM:
                     await app.copy_message(
                         chat_id=message.chat.id, 
-                        from_chat_id=int(PRE_LOG), 
+                        from_chat_id=PRE_LOG, 
                         message_id=copy.id)
                     await message_for_progress_display.edit_text("Yükleme Başarılı ✅")
             else:
@@ -508,7 +508,7 @@ async def upload_single_file(
                 # send document
                 if PRE:
                     copy = await userbot.send_document(
-                        chat_id=int(PRE_LOG),
+                        chat_id=PRE_LOG,
                         document=local_file_name,
                         thumb=thumb,
                         caption=caption_str,
@@ -523,7 +523,7 @@ async def upload_single_file(
                 if BOT_PM:
                     await app.copy_message(
                         chat_id=message.chat.id, 
-                        from_chat_id=int(PRE_LOG), 
+                        from_chat_id=PRE_LOG, 
                         message_id=copy.id)
                     await message_for_progress_display.edit_text("Yükleme Başarılı ✅")
         except MessageNotModified as oY:
