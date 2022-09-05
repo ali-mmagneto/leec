@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+878speedtest#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | gautamajay52
 
@@ -535,7 +535,7 @@ async def upload_single_file(
             LOGGER.info(e)
             await message_for_progress_display.edit_text("**FAILED**\n" + str(e))
         else:
-            if message.message_id != message_for_progress_display.message_id:
+            if message.id != message_for_progress_display.id:
                 try:
                     if sent_message is not None:
                         await message_for_progress_display.delete()
