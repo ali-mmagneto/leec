@@ -425,10 +425,10 @@ async def upload_single_file(
                 # send video
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
-                    tanitma = try:
-                                  await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
-                              except Exception as e:
-                                  LOGGER.info(e)
+                    try:
+                        await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
+                    except Exception as e:
+                        LOGGER.info(e)
                     copy = await userbot.send_video(
                         chat_id=PRE_LOG,
                         video=local_file_name,
@@ -475,10 +475,10 @@ async def upload_single_file(
                 # send audio
                 prog = Progress(from_user, client, message_for_progress_display)
                 if PRE:
-                    tanitma = try:
-                                  await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
-                              except Exception as e:
-                                  LOGGER.info(e)
+                    try:
+                        await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
+                    except Exception as e:
+                        LOGGER.info(e)
                     copy = await userbot.send_audio(
                         chat_id=PRE_LOG,
                         audio=local_file_name,
@@ -516,10 +516,10 @@ async def upload_single_file(
                 #
                 # send document
                 if PRE:
-                    tanitma = try:
-                                  await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
-                              except Exception as e:
-                                  LOGGER.info(e)
+                    try:
+                        await app.send_message(PRE_LOG, f"{message.chat.id} sohbetinde bir yükleme isteğinde bulunuldu.") 
+                    except Exception as e:
+                        LOGGER.info(e)
                     copy = await userbot.send_document(
                         chat_id=PRE_LOG,
                         document=local_file_name,
